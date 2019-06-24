@@ -60,6 +60,7 @@ router.get('/studentsforstudent',function (req,res) {
 
     router.get('/students/edit',function (req,res){
 
+
         Student.findById(parseInt(req.query.id),function(err,student){
             if(err){
                 return res.status(500).send('Server error')
