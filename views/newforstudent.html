@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>学生管理系统/title>
+    <title>学生管理系统</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -77,26 +77,25 @@
 
             <h2 class="sub-header">添加学生</h2>
 
-            <form action="/students/edit" method="post">
-                <input type="hidden" value="{{student.id}}" name="id">
+            <form action="/students/newforstudent" method="post">
                 <div class="form-group">
                     <label for="">姓名</label>
-                    <input type="text" class="form-control" id="" placeholder="name" name="name" value="{{student.name}}">
+                    <input type="text" class="form-control" id="" placeholder="name" name="name">
                 </div>
-                <div class="form-group">
-                    <label for="">成绩</label>
-                    <input type="number" class="form-control" id="" placeholder="grade" name="grade" value="{{student.grade}}">
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <label for="">成绩</label>-->
+<!--                    <input type="number" class="form-control" id="" placeholder="grade" name="grade">-->
+<!--                </div>-->
                 <div class="form-group">
                     <label for="">学号</label>
-                    <input type="text" class="form-control" id="" placeholder="id" name="id" value="{{student.id}}">
+                    <input type="text" class="form-control" id="" placeholder="id" name="id">
                 </div>
                 <div class="form-group">
                     <label for="">课程</label>
-                    <input type="text" class="form-control" id="" placeholder="collage" name="collage" value="{{student.collage}}">
+                    <input type="text" class="form-control" id="" placeholder="collage" name="collage">
                 </div>
 
-                <br/><button type="submit" class="btn btn-success">提交</button>
+        <br/><button type="submit" class="btn btn-success">提交</button>
             </form>
 
         </div>
