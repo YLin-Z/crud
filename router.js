@@ -19,6 +19,18 @@ var router = express.Router()//把路由挂载到路由容器中
         })
     })})
 
+router.get('/tc',function (req,res) {
+    Student.find(function(err,students){
+        if(err){
+            return res.status(500).send('Server error')//500是状态码 告诉服务器出错了
+        }
+        res.render('indexfortc.html',{
+
+            students:students
+        })
+    })})
+
+
 router.get('/studentsforstudent',function (req,res) {
 
     Student.find(function(err,students){
@@ -72,6 +84,20 @@ router.get('/studentsforstudent',function (req,res) {
         })
     })
 
+router.get('/students/edittc',function (req,res){
+
+
+    Student.findById(parseInt(req.query.id),function(err,student){
+        if(err){
+            return res.status(500).send('Server error')
+        }
+        res.render('edittc.html',{
+            student:student
+        })
+
+    })
+})
+
     router.post('/students/edit',function (req,res){
         Student.updateById(req.body,function (err) {
             if (err){
@@ -80,6 +106,15 @@ router.get('/studentsforstudent',function (req,res) {
             res.redirect('/students')
         })
     })
+
+router.post('/students/edittc',function (req,res){
+    Student.updateById(req.body,function (err) {
+        if (err){
+            return res.status(500).send('Server error')
+        }
+        res.redirect('/tc')
+    })
+})
 
     router.get('/students/delete',function (req,res){
         Student.deleteById(req.query.id,function (err) {
